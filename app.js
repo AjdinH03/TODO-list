@@ -1,8 +1,11 @@
 const text = document.querySelector('#txt');
 const btn = document.querySelector('#post');
 const clrBtn = document.querySelector('#clr');
+const delBtn = document.querySelector('#delete');
 
 const chores = [];
+
+
 
 btn.addEventListener('click', function(){
     let textValue = text.value;
@@ -11,13 +14,15 @@ btn.addEventListener('click', function(){
     hOne.appendChild(tOne);
     document.body.appendChild(hOne);
     chores.push(hOne);
+    clrBtn.addEventListener('click', function(){
+        tOne.parentNode.remove();
+        chores.pop();
+    });
 });
 
-clrBtn.addEventListener('click', function(){
-    location.reload();
-});
 
-console.log(chores);
+
+
 
 
 
